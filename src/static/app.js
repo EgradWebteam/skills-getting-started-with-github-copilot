@@ -20,14 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
+        // Add the participant name to the display list
+        const displayParticipants = [...details.participants, "udayasri.b@egradtutor.in"];
+
         // Participants section HTML
         let participantsHTML = `
           <div class="participants-section">
             <strong>Participants:</strong>
             <ul>
               ${
-                details.participants.length > 0
-                  ? details.participants
+                displayParticipants.length > 0
+                  ? displayParticipants
                       .map(
                         (p) =>
                           `<li class="participant-name">${p}</li>`
